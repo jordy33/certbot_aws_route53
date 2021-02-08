@@ -1,5 +1,13 @@
 ## How to automate certbot with aws wild card certificates
 
+
+### Import entrys for route 53
+```
+$ORIGIN dudewhereismy.mx
+$TTL 3600   
+old IN A 13.58.151.163
+deepspeech IN A 3.22.95.69
+```
 ### Create Policy in AWS
 
 * Go to AWS console log with root user 
