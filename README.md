@@ -57,6 +57,7 @@ sudo DOMAIN='dudewhereismy.mx' sudo -E bash -c 'cat /home/wsgi/letsencrypt/confi
 ### Update Rabbit 
 ```
 cp /home/wsgi/Python-3.5.2/lib/python3.5/site-packages/pip/_vendor/certifi/cacert.pem  /home/wsgi/certs/.
+cd /home/wsgi/letsencrypt/config/live/dudewhereismy.mx
 cp cert.pem /home/wsgi/certs/.
 cp privkey.pem /home/wsgi/certs/.
 sudo chmod -R go-rwx /etc/haproxy/certs
