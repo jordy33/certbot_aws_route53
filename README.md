@@ -89,5 +89,13 @@ crontab -e
 
 ### Create file renew-certs.sh at /home/wsgi/backups
 ```
-/usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /etc/letsencrypt/live/dudewhereismy.com.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.com.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.com.mx.pem " && bash -c "cat /etc/letsencrypt/live/dudewhereismy.com.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.com.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.com.mx.pem" && service haproxy reload
+/usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /etc/letsencrypt/live/dudewhereismy.com.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.com.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.com.mx.pem " && bash -c "cat /etc/letsencrypt/live/elisasoftware.com.mx/fullchain.pem /etc/letsencrypt/live/elisasoftware.com.mx/privkey.pem > /etc/haproxy/certs/elisasoftware.com.mx.pem" && service haproxy reload
+```
+or 
+```
+/usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /etc/letsencrypt/live/dudewhereismy.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.mx.pem " && bash -c "cat /etc/letsencrypt/live/elisasoftware.mx/fullchain.pem /etc/letsencrypt/live/elisasoftware.mx/privkey.pem > /etc/haproxy/certs/elisasoftware.mx.pem" && service haproxy reload
+```
+### Grant permit
+```
+chmod +x renew-certs.sh 
 ```
