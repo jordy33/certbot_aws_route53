@@ -84,5 +84,10 @@ crontab -e
 ```
 ### Add at the bottom Check every month:
 ```
-0 0 1 * 0 /usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 30
+0 0 1 * 0 /home/wsgi/backups/renew-certs.sh
+```
+
+### Create file renew-certs.sh at /home/wsgi/backups
+```
+/usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /etc/letsencrypt/live/dudewhereismy.com.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.com.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.com.mx.pem " && bash -c "cat /etc/letsencrypt/live/dudewhereismy.com.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.com.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.com.mx.pem" && service haproxy reload
 ```
