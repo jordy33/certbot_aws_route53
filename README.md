@@ -95,6 +95,10 @@ or
 ```
 /usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /etc/letsencrypt/live/dudewhereismy.mx/fullchain.pem /etc/letsencrypt/live/dudewhereismy.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.mx.pem " && bash -c "cat /etc/letsencrypt/live/elisasoftware.mx/fullchain.pem /etc/letsencrypt/live/elisasoftware.mx/privkey.pem > /etc/haproxy/certs/elisasoftware.mx.pem" && service haproxy reload
 ```
+or 
+```
+/usr/bin/certbot renew --dns-route53 --dns-route53-propagation-seconds 29 && bash -c "cat /home/wsgi/letsencrypt/config/live/dudewhereismy.mx/fullchain.pem /home/wsgi/letsencrypt/config/live/dudewhereismy.mx/privkey.pem > /etc/haproxy/certs/dudewhereismy.mx.pem" && chmod 644 /etc/haproxy/certs/dudewhereismy.mx.pem && service haproxy reload
+```
 ### Grant permit
 ```
 chmod +x renew-certs.sh 
