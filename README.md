@@ -52,6 +52,27 @@ sudo service rabbitmq-server stop
 sudo apt-get update -y
 sudo apt-get install -y python3-certbot-dns-route53
 ```
+### Optional install
+
+```
+https://websiteforstudents.com/how-to-install-python-on-ubuntu-linux/
+
+wget https://files.pythonhosted.org/packages/da/f6/c83229dcc3635cdeb51874184241a9508ada15d8baa337a41093fab58011/pip-21.3.1.tar.gz
+tar -xzvf pip-21.3.1.tar.gz 
+cd pip-21.3.1
+sudo python3 setup.py install
+
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo apt-add-repository ppa:certbot/certbot
+$ sudo apt update
+$ sudo apt install certbot
+
+$ sudo apt install python3-pip
+$ sudo pip3 install certbot-dns-route53
+
+cat /etc/letsencrypt/live/dwim.mx/fullchain.pem /etc/letsencrypt/live/dwim.mx/privkey.pem > /etc/haproxy/certs/dwim.mx.pem
+```
 
 ### Create certificate
 
